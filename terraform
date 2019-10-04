@@ -1,0 +1,31 @@
+pipeline {
+    agent  any
+    
+    stages {
+        
+        stage('checkout') {
+            steps {
+                git branch: 'feature/ansible', credentialsId: 'acfee39a-45b7-4d99-a407-dd97789b64f7', url: 'https://github.com/Marwa8888/Projet_Pic.git'
+			}
+        }
+
+     
+        
+        stage('tfinit') {
+            steps {
+                dir('outils') {
+                    sh 'terraform init'
+                    sh 'terraform plan'
+                }
+            }
+        }
+
+        stage('tfapply') {
+            steps {
+                dir('outils') {
+                    sh 'terraform apply -auto-approve'
+                }
+            }
+        }
+    }   
+}
