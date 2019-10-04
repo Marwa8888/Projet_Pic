@@ -1,5 +1,5 @@
 variable "credentials" {
-  default = "/home/marwa/Pic/mattermost-245316-dd9f9541d51f.json"
+  default = "/home/marwa/Pic/.gitignore/mattermost-245316-dd9f9541d51f.json"
 }
 
 variable "projet" {

@@ -63,6 +63,10 @@ resource "google_compute_instance" "jenkins" {
   network_interface {
     network = "${google_compute_network.network.self_link}"
     subnetwork = "${google_compute_subnetwork.subjenkins.self_link}"
+
+      access_config {
+      // Ephemeral IP
+}
   }
 
   metadata {
